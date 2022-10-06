@@ -3,7 +3,7 @@ Plugin for [flying squid](https://github.com/PrismarineJS/flying-squid) similar 
 
 # Installation
 
-`$ npm install squid-edit`
+`$ npm install squidedit`
 
 # Commands
 
