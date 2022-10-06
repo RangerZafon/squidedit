@@ -1,5 +1,5 @@
 {
-  "name": "@rangerzafon/squidedit",
+  "name": "squidedit",
   "version": "1.0.0",
   "description": "Plugin for flyingsquid that can edit world.",
   "main": "index.js",
