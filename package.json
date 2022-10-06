@@ -1,0 +1,26 @@
+{
+  "name": "@rangerzafon/squidedit",
+  "version": "1.0.0",
+  "description": "Plugin for flyingsquid that can edit world.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RangerZafon/squidedit.git"
+  },
+  "keywords": [
+    "flyingsquid",
+    "squid",
+    "world",
+    "edit",
+    "squidedit"
+  ],
+  "author": "RangerZafon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RangerZafon/squidedit/issues"
+  },
+  "homepage": "https://github.com/RangerZafon/squidedit#readme"
+}
