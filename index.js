@@ -115,9 +115,13 @@ module.exports.server = function(serv) {
                     const blocksToMakeSphere = parseBlocks(args[0])
                     const sphere = createSphere(Number(args[1]), 1, 0, plr.position)
                     let blocksCount = 0
+                    playersData[plr.username].history.undo = []
                     sphere.forEach(pos => {
                         blocksCount++
-                        serv.setBlock(plr.world, new Vec3(Math.floor(pos[0]), Math.floor(pos[1]), Math.floor(pos[2])), blocksToMakeSphere[Math.floor(Math.random()*blocksToMakeSphere.length)])
+                        plr.world.getBlock(new Vec3(pos[0], pos[1], pos[2])).then(result => {
+                            playersData[plr.username].history.undo.push(result)
+                            serv.setBlock(plr.world, new Vec3(Math.floor(pos[0]), Math.floor(pos[1]), Math.floor(pos[2])), blocksToMakeSphere[Math.floor(Math.random()*blocksToMakeSphere.length)])
+                        })
                     })
                     plr.chat(messages.blocksChanged.replace("0", String(blocksCount)))
                 }
@@ -127,7 +131,7 @@ module.exports.server = function(serv) {
     serv.commands.add({ //hsphere
         base: "hsphere",
         info: "Creates hollow sphere",
-        usage: "sphere <block || blocks> ex. blocks: 1,2,3 && <radius: int>",
+        usage: "hsphere <block || blocks> ex. blocks: 1,2,3 && <radius: int>",
         parse(str) {
           const args = str.split(" ")
           if(args.length != 2) return false
@@ -140,9 +144,13 @@ module.exports.server = function(serv) {
                     const blocksToMakeSphere = parseBlocks(args[0])
                     const sphere = createSphere(Number(args[1]), 1, 1, plr.position)
                     let blocksCount = 0
+                    playersData[plr.username].history.undo = []
                     sphere.forEach(pos => {
                         blocksCount++
-                        serv.setBlock(plr.world, new Vec3(Math.floor(pos[0]), Math.floor(pos[1]), Math.floor(pos[2])), blocksToMakeSphere[Math.floor(Math.random()*blocksToMakeSphere.length)])
+                        plr.world.getBlock(new Vec3(pos[0], pos[1], pos[2])).then(result => {
+                            playersData[plr.username].history.undo.push(result)
+                            serv.setBlock(plr.world, new Vec3(Math.floor(pos[0]), Math.floor(pos[1]), Math.floor(pos[2])), blocksToMakeSphere[Math.floor(Math.random()*blocksToMakeSphere.length)])
+                        })
                     })
                     plr.chat(messages.blocksChanged.replace("0", String(blocksCount)))
                 }
@@ -199,9 +207,13 @@ module.exports.server = function(serv) {
                     let blocks = parseBlocks(args[0])
                     const cylinder = createCylinder(Number(args[1]), Number(args[2]), pos, false)
                     let blockscount = 0
+                    playersData[plr.username].history.undo = []
                     cylinder.forEach(pos => {
                         blockscount++
-                        serv.setBlock(plr.world, pos, blocks[Math.floor(Math.random()*blocks.length)])
+                        plr.world.getBlock(pos).then(result => {
+                            playersData[plr.username].history.undo.push(result)
+                            serv.setBlock(plr.world, pos, blocks[Math.floor(Math.random()*blocks.length)])
+                        })
                     })
                     plr.chat(messages.blocksChanged.replace("0", String(blockscount)))
                 }
@@ -231,9 +243,13 @@ module.exports.server = function(serv) {
                     })
                     const cylinder = createCylinder(Number(args[1]), Number(args[2]), pos, true)
                     let blockscount = 0
+                    playersData[plr.username].history.undo = []
                     cylinder.forEach(pos => {
                         blockscount++
-                        serv.setBlock(plr.world, pos, blocks[Math.floor(Math.random()*blocks.length)])
+                        plr.world.getBlock(pos).then(result => {
+                            playersData[plr.username].history.undo.push(result)
+                            serv.setBlock(plr.world, pos, blocks[Math.floor(Math.random()*blocks.length)])
+                        })
                     })
                     plr.chat(messages.blocksChanged.replace("0", String(blockscount)))
                 }
