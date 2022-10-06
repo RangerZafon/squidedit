@@ -14,7 +14,7 @@ Description: *Set first position to your location*\
 Usage: *pos1*
 
 ## /pos2
-Description: *Set secondposition to your location*\
+Description: *Set second position to your location*\
 Usage: *pos2*
 
 # History
@@ -56,11 +56,3 @@ Usage: *cyl <block || blocks> ex. blocks: 1,2,3 && <height: int> <radius: int>*
 ## /cyl
 Description: *Set first position to your or specific location*\
 Usage: *cyl <block || blocks> ex. blocks: 1,2,3 && <height: int> <radius: int>*
-
-## /pos1
-Description: *Set first position to your location*\
-Usage: *pos1 x,y,z (optional)*
-
-## /pos2
-Description: *Set first position to your location*\
-Usage: *pos2 x,y,z (optional)*
