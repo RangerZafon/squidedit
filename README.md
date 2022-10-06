@@ -1,15 +1,33 @@
 # SquidEdit
 Plugin for [flying squid](https://github.com/PrismarineJS/flying-squid) similar to "world edit".
 
-# Selection
-You can select area with wooden axe\
-Or with commands `/pos1` and `/pos2`.
-
 # Installation
 
 `$ npm install squid-edit`
 
 # Commands
+
+# Selection
+
+## /pos1
+Description: *Set first position to your location*\
+Usage: *pos1*
+
+## /pos2
+Description: *Set secondposition to your location*\
+Usage: *pos2*
+
+# History
+
+## /undo
+Description: *Undo your last action*\
+Usage: *undo*
+
+## /redo
+Description: *Redo your last action*\
+Usage: *redo*
+
+# Editing
 
 ## /set
 Description: *Fills area with blocks*\
