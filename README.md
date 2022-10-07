@@ -59,7 +59,3 @@ Usage: *cyl <block || blocks> ex. blocks: 1,2,3 && <height: int> <radius: int>*
 ## /hcyl
 Description: *Creates hollow cylinder*\
 Usage: *cyl <block || blocks> ex. blocks: 1,2,3 && <height: int> <radius: int>*
-
-## /cyl
-Description: *Set first position to your or specific location*\
-Usage: *cyl <block || blocks> ex. blocks: 1,2,3 && <height: int> <radius: int>*
