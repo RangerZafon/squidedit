@@ -1,7 +1,7 @@
 const MinecraftData = require("minecraft-data")
 const Vec3 = require("vec3")
 let playersData = {}
-const messages = {
+let messages = {
     positionSet: {
         [0]: "Set first position at: ",
         [1]: "Set second position at: "
@@ -49,6 +49,11 @@ function parseBlocks(blocks) {
 }
 module.exports.server = function(serv) {
     mcdata = require("minecraft-data")(serv._server.version)
+    if (typeof serv.plugins.squidedit.settings === "object") {
+        if (serv.plugins.squidedit.settings["messages"]) {
+            messages = serv.plugins.squidedit.settings.messages
+        }
+    }
     // commands
     serv.commands.add({ // set
         base: "set",
