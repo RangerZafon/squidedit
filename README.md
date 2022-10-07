@@ -6,7 +6,7 @@ Plugin for [flying squid](https://github.com/PrismarineJS/flying-squid) similar 
 `$ npm install squidedit`
 
 Then enable it in your server properties:
-```json
+```js
   "plugins": {
     "squidedit": true // or custom settings: {messages: {...}}
   },
